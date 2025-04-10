@@ -30,3 +30,30 @@ window.addEventListener('click' , function(e){
         btnOuter.style.display = "flex";
     }
 })
+btn.forEach(function(evt) {
+  // Mouse move
+  evt.addEventListener('mousemove', function(e) {
+    let rect = evt.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.bottom;
+
+    movingDiv.forEach(function(el) {
+      el.style.transform = `translateX(${x - 75}px) translateY(${y - 35}px)`;
+    });
+  });
+
+  // Touch move
+  evt.addEventListener('touchmove', function(e) {
+    e.preventDefault(); // Prevent scrolling while moving
+
+    let rect = evt.getBoundingClientRect();
+    let touch = e.touches[0];
+
+    let x = touch.clientX - rect.left;
+    let y = touch.clientY - rect.bottom;
+
+    movingDiv.forEach(function(el) {
+      el.style.transform = `translateX(${x - 75}px) translateY(${y - 35}px)`;
+    });
+  }, { passive: false });
+});
