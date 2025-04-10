@@ -31,29 +31,27 @@ window.addEventListener('click' , function(e){
     }
 })
 btn.forEach(function(evt) {
-  // Mouse move
-  evt.addEventListener('mousemove', function(e) {
-    let rect = evt.getBoundingClientRect();
-    let x = e.clientX - rect.left;
-    let y = e.clientY - rect.bottom;
-
-    movingDiv.forEach(function(el) {
-      el.style.transform = `translateX(${x - 75}px) translateY(${y - 35}px)`;
-    });
-  });
-
-  // Touch move
+  // Touch move (swipe inside button)
   evt.addEventListener('touchmove', function(e) {
-    e.preventDefault(); // Prevent scrolling while moving
+    e.preventDefault(); // Prevent scrolling
 
     let rect = evt.getBoundingClientRect();
     let touch = e.touches[0];
 
+    // Get position of touch relative to the button
     let x = touch.clientX - rect.left;
-    let y = touch.clientY - rect.bottom;
+    let y = touch.clientY - rect.top; // use top instead of bottom
 
+    // Move the div relative to touch inside the button
     movingDiv.forEach(function(el) {
       el.style.transform = `translateX(${x - 75}px) translateY(${y - 35}px)`;
     });
   }, { passive: false });
+
+  // Optional: Reset or hide on touchend
+  evt.addEventListener('touchend', function() {
+    movingDiv.forEach(function(el) {
+      el.style.transform = `translateX(0) translateY(0)`;
+    });
+  });
 });
