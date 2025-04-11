@@ -48,10 +48,4 @@ btn.forEach(function(evt) {
     });
   }, { passive: false });
 
-  // Optional: Reset or hide on touchend
-  evt.addEventListener('touchend', function() {
-    movingDiv.forEach(function(el) {
-      el.style.transform = `translateX(0) translateY(0)`;
-    });
-  });
 });
