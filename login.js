@@ -47,7 +47,7 @@ window.addEventListener('click' , function(e){
         }
     })
 btn.forEach(function(evt){
-    evt.addEventListener('mousemove', function(e){
+    evt.addEventListener('touchmove', function(e){
     e.preventDefault()
     let move = e.getBoundingClientRect();
     let touch = e.touches[0];
