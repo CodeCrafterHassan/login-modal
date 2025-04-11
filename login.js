@@ -47,7 +47,7 @@ window.addEventListener('click' , function(e){
         }
     })
 btn.forEach(function(evt){
-    evt.addEventListener('touchmove', function(e){
+    evt.addEventListener('mousemove', function(e){
     e.preventDefault()
     let move = e.getBoundingClientRect();
     let touch = e.touches[0];
@@ -55,8 +55,7 @@ btn.forEach(function(evt){
     let y = touch.clientY - move.top;
 
     movingDiv.forEach(function(e){
-        e.style.transform = `translateX(${x -'75'}px) translateY(${y -'35'}px)`
-    })
-
-    },{passive : false})
+        e.style.transform = `translateX(${x -75}px) translateY(${y -35}px)`
+    });
+    },{ passive : false});
 })
