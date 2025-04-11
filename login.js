@@ -58,7 +58,7 @@ btn.forEach(function(evt){
     })
     },{ passive : false})
 })
-cross.addEventListener('click',function(){
+cross.addEventListener('touchstart',function(){
     outerModal.classList.remove('open');
     btnOuter.style.display = "flex";
 })
