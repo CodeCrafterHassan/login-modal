@@ -20,7 +20,7 @@ body{
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: transform .2s ease-in;
+    transition: all .3s ease-in;
     overflow:hidden ;
     position: relative;
     box-shadow: 0 0 15px rgba(48, 248, 248, 0.451);
