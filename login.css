@@ -96,6 +96,32 @@ h1{
     outline:none;
     border-radius: 5px;
     padding: 12px;
+    width: 90%;
+    justify-self: center;
+}
+.password-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.eye{
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    cursor: pointer;
+}
+.hide{
+    opacity: 1;
+}
+.show{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.eye:active{
+    transform: scale(0.9);
 }
 .input:focus{
     border: 2px solid rgba(0, 255, 255, 0.6);
@@ -106,7 +132,7 @@ h1{
     height: 100%;
     padding: 12px;
 }
-@media screen and (max-width:420px) {
+@media screen and (max-width:520px) {
     .login-modal{
         width:80% ;
     }
