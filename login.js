@@ -6,19 +6,18 @@ let btnInner = document.querySelector('.modal-btn');
 let eyeBtn = document.querySelector('.eye')
 let hideBtn = document.querySelector('.hide');
 let showBtn = document.querySelector('.show');
-let passwordType = document.querySelector('.password')
-
+let passwordType = document.querySelector('.password');
+let cross = document.querySelector('.cross');
 btn.forEach(function(evt){
     evt.addEventListener('mousemove', function(e){
         let rect = evt.getBoundingClientRect();
         let x = e.clientX - rect.left;
         let y = e.clientY - rect.bottom;
         movingDiv.forEach(function(el){
-            el.style.transform = ` translateX(${x - '75'}px) translateY(${y - '35'}px)`
+            el.style.transform = ` translateX(${x - 75}px) translateY(${y - 35}px)`
         })
     })
 });
-
 btnOuter.addEventListener('click',function(){
     outerModal.classList.add('open');
     btnOuter.style.display = "none";
@@ -56,6 +55,12 @@ btn.forEach(function(evt){
 
     movingDiv.forEach(function(e){
         e.style.transform = `translateX(${x -75}px) translateY(${y -35}px)`
-    });
-    },{ passive : false});
+    })
+    },{ passive : false})
 })
+cross.addEventListener('click',function(){
+    outerModal.classList.remove('open');
+    btnOuter.style.display = "flex";
+})
+
+
