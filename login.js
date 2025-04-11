@@ -58,5 +58,5 @@ btn.forEach(function(evt){
         e.style.transform = `translateX(${x -'75'}px) translateY(${y -'35'}px)`
     })
 
-    })
+    }),{passive : false}
 })
