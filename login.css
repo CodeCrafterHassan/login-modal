@@ -136,4 +136,12 @@ h1{
     .login-modal{
         width:80% ;
     }
+    .login-modal .cross{
+        background-color: rgba(230, 230, 230, 0.8);
+        z-index: 1000;
+        width: 25px;
+        height: 25px;
+        border-radius: 10px;
+        clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    }
 }
