@@ -70,13 +70,13 @@ btn.forEach(function(evt){
     let y = touch.clientY - move.top;
 
     movingDiv.forEach(function(e){
-        e.style.transform = `translateX(75px) translateY(-35px)`
-        el.style.transition = ` transform 0.4s ease-in`
+         e.style.transform = `translateX(${x -75}px) translateY(${y -75}px)`})
+       
     })
     },{ passive : false})
 })
 btn.forEach(function(evt){
-    evt.addEventListener('touchmove', function(e){
+    evt.addEventListener('touchend', function(e){
   set timeout(()=> {  e.preventDefault()
     let move = evt.getBoundingClientRect();
     let touch = e.touches[0];
@@ -84,11 +84,12 @@ btn.forEach(function(evt){
     let y = touch.clientY - move.top;
 
     movingDiv.forEach(function(e){
-        e.style.transform = `translateX(${x -75}px) translateY(${y -75}px)`})
+        e.style.transform = `translateX(75px) translateY(-75px)`
+        el.style.transition = ` transform 0.4s ease-in`
   })
     },{ passive : false})
 })
-cross.addEventListener('',function(){
+cross.addEventListener('click',function(){
     outerModal.classList.remove('open');
     btnOuter.style.display = "flex";
 })
