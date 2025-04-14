@@ -67,10 +67,9 @@ window.addEventListener('click' , function(e){
             let move = evt.getBoundingClientRect();
             let touch = e.touches[0];
             let x = touch.clientX - move.left;
-            let y = touch.clientY - move.top;
-    
+            
             movingDiv.forEach(function(el){
-                el.style.transform = `translateX(${x -75}px) translateY(${y -75}px)`;
+                el.style.transform = `translateX(${x -75}px)`;
             });
         }, { passive: false });
     });
@@ -81,10 +80,9 @@ window.addEventListener('click' , function(e){
                 let move = evt.getBoundingClientRect();
             let touch = e.changedTouches[0];
             let x = touch.clientX - move.left;
-            let y = touch.clientY - move.top;
     
             movingDiv.forEach(function(el){
-                el.style.transform = `translateX(75px) translateY(-75px)`
+                el.style.transform = `translateX(-75px)`
                 el.style.transition=`transform 0.3s ease-in`
             });
             },3000)
