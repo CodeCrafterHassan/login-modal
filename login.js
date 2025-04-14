@@ -14,10 +14,26 @@ btn.forEach(function(evt){
         let x = e.clientX - rect.left;
         let y = e.clientY - rect.bottom;
         movingDiv.forEach(function(el){
-            el.style.transform = ` translateX(${x - 75}px) translateY(${y - 35}px)`
-        })
-    })
+            el.style.transform = ` translateX(${x - 55}px) translateY(${y - 35}px)`
+            el.style.transition = `none`
+        });
+    });
+    
 });
+btn.forEach(function(evt){
+    evt.addEventListener('mouseleave', function(e){
+        setTimeout(()=>{
+            let rect = evt.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.bottom;
+        movingDiv.forEach(function(el){
+            el.style.transform = ` translateX(-75px) translateY(-75px)`
+            el.style.transition = ` transform 0.4s ease-in`
+        });
+        },2000);
+    });
+});
+
 btnOuter.addEventListener('click',function(){
     outerModal.classList.add('open');
     btnOuter.style.display = "none";
@@ -34,7 +50,7 @@ window.addEventListener('click' , function(e){
         btnOuter.style.display = "flex";
     }
 })
-    eyeBtn.addEventListener('click', function(){
+    eyeBtn.addEventListener('click', function(){ 
         if(hideBtn.style.opacity === '1'){
             hideBtn.style.opacity = '0'
             showBtn.style.opacity = '1'
@@ -58,9 +74,7 @@ btn.forEach(function(evt){
     })
     },{ passive : false})
 })
-cross.addEventListener('touchstart',function(){
+cross.addEventListener('',function(){
     outerModal.classList.remove('open');
     btnOuter.style.display = "flex";
 })
-
-
