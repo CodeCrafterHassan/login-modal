@@ -30,7 +30,7 @@ btn.forEach(function(evt){
             el.style.transform = ` translateX(-75px) translateY(-75px)`
             el.style.transition = ` transform 0.4s ease-in`
         });
-        },2000);
+        },3000);
     });
 });
 
