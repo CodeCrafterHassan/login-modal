@@ -79,7 +79,7 @@ btn.forEach(function(evt){
     evt.addEventListener('touchend', function(e){
   set timeout(()=> {  e.preventDefault()
     let move = evt.getBoundingClientRect();
-    let touch = e.touches[0];
+    let touch = e.changedtouches[0];
     let x = touch.clientX - move.left;
     let y = touch.clientY - move.top;
 
