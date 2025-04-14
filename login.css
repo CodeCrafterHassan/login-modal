@@ -48,8 +48,7 @@ span{
     pointer-events: none;
     left: 0;
     height: 150px;
-    width: 150px;
-    border-radius: 50%;
+    width: 100px;
     background: rgba(34, 222, 222, 0.372); 
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
     cursor: pointer;
@@ -134,7 +133,7 @@ h1{
 }
 @media screen and (max-width:520px) {
     .login-modal{
-        width:80% ;
+        width:80%;
     }
     .login-modal .cross{
         background-color: rgba(230, 230, 230, 0.8);
