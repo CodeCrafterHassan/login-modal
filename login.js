@@ -82,7 +82,7 @@ window.addEventListener('click' , function(e){
             let x = touch.clientX - move.left;
     
             movingDiv.forEach(function(el){
-                el.style.transform = `translateX(-75px)`
+                el.style.transform = `translateX(-75px) translateY(-50px)`
                 el.style.transition=`transform 0.3s ease-in`
             });
             },3000)
