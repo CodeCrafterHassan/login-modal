@@ -69,7 +69,7 @@ window.addEventListener('click' , function(e){
             let x = touch.clientX - move.left;
             
             movingDiv.forEach(function(el){
-                el.style.transform = `translateX(${x -75}px)`;
+                el.style.transform = `translateX(${x -75}px) translateY(-50px)`;
             });
         }, { passive: false });
     });
